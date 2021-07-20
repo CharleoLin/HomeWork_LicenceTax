@@ -41,11 +41,12 @@ namespace HomeWork_LicenceTax
             this.VolumeHorsepower = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.CalculationResult = new System.Windows.Forms.Label();
             this.SendCalculation = new System.Windows.Forms.Button();
             this.CencelAll = new System.Windows.Forms.Button();
             this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -129,7 +130,7 @@ namespace HomeWork_LicenceTax
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox1.ForeColor = System.Drawing.Color.Green;
-            this.groupBox1.Location = new System.Drawing.Point(53, 23);
+            this.groupBox1.Location = new System.Drawing.Point(53, 99);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(760, 85);
             this.groupBox1.TabIndex = 6;
@@ -141,7 +142,7 @@ namespace HomeWork_LicenceTax
             this.groupBox2.Controls.Add(this.VehicleKindListBox1);
             this.groupBox2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox2.ForeColor = System.Drawing.Color.Green;
-            this.groupBox2.Location = new System.Drawing.Point(53, 128);
+            this.groupBox2.Location = new System.Drawing.Point(53, 204);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(347, 197);
             this.groupBox2.TabIndex = 7;
@@ -182,7 +183,7 @@ namespace HomeWork_LicenceTax
             this.groupBox3.Controls.Add(this.VolumeHorsepower);
             this.groupBox3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox3.ForeColor = System.Drawing.Color.Green;
-            this.groupBox3.Location = new System.Drawing.Point(53, 331);
+            this.groupBox3.Location = new System.Drawing.Point(53, 407);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(347, 100);
             this.groupBox3.TabIndex = 9;
@@ -194,12 +195,20 @@ namespace HomeWork_LicenceTax
             this.groupBox4.Controls.Add(this.panel1);
             this.groupBox4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.groupBox4.ForeColor = System.Drawing.Color.Green;
-            this.groupBox4.Location = new System.Drawing.Point(422, 128);
+            this.groupBox4.Location = new System.Drawing.Point(422, 204);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(391, 361);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "試算結果";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.CalculationResult);
+            this.panel1.Location = new System.Drawing.Point(6, 33);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(377, 322);
+            this.panel1.TabIndex = 1;
             // 
             // CalculationResult
             // 
@@ -215,7 +224,7 @@ namespace HomeWork_LicenceTax
             // 
             // SendCalculation
             // 
-            this.SendCalculation.Location = new System.Drawing.Point(84, 437);
+            this.SendCalculation.Location = new System.Drawing.Point(84, 513);
             this.SendCalculation.Name = "SendCalculation";
             this.SendCalculation.Size = new System.Drawing.Size(124, 52);
             this.SendCalculation.TabIndex = 11;
@@ -225,7 +234,7 @@ namespace HomeWork_LicenceTax
             // 
             // CencelAll
             // 
-            this.CencelAll.Location = new System.Drawing.Point(256, 437);
+            this.CencelAll.Location = new System.Drawing.Point(256, 513);
             this.CencelAll.Name = "CencelAll";
             this.CencelAll.Size = new System.Drawing.Size(124, 52);
             this.CencelAll.TabIndex = 12;
@@ -235,25 +244,28 @@ namespace HomeWork_LicenceTax
             // 
             // vScrollBar1
             // 
-            this.vScrollBar1.Location = new System.Drawing.Point(808, 128);
+            this.vScrollBar1.Location = new System.Drawing.Point(808, 204);
             this.vScrollBar1.Name = "vScrollBar1";
             this.vScrollBar1.Size = new System.Drawing.Size(21, 361);
             this.vScrollBar1.TabIndex = 13;
             this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
             // 
-            // panel1
+            // label3
             // 
-            this.panel1.Controls.Add(this.CalculationResult);
-            this.panel1.Location = new System.Drawing.Point(6, 33);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(377, 322);
-            this.panel1.TabIndex = 1;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("微軟正黑體", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label3.Location = new System.Drawing.Point(233, 38);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(393, 43);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "使用牌照稅應納稅額試算";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 518);
+            this.ClientSize = new System.Drawing.Size(871, 588);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.vScrollBar1);
             this.Controls.Add(this.CencelAll);
             this.Controls.Add(this.SendCalculation);
@@ -272,6 +284,7 @@ namespace HomeWork_LicenceTax
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -294,6 +307,7 @@ namespace HomeWork_LicenceTax
         private System.Windows.Forms.Button CencelAll;
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
     }
 }
 

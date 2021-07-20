@@ -30,7 +30,27 @@ namespace HomeWork_LicenceTax
         {
             Initial();
             this._startPoint = this.CalculationResult.Location;
-        }       
+        }
+        private void AllYearRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (AllYearRadioButton.Checked)
+            {
+                this.label1.Visible = false;
+                this.label2.Visible = false;
+                this.dateTimePicker1.Visible = false;
+                this.dateTimePicker2.Visible = false;
+            }
+        }
+        private void ForTimeRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ForTimeRadioButton.Checked)
+            {
+                this.label1.Visible = true;
+                this.label2.Visible = true;
+                this.dateTimePicker1.Visible = true;
+                this.dateTimePicker2.Visible = true;
+            }
+        }        
         private void VehicleKindListBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             string carType = this.VehicleKindListBox1.SelectedItem.ToString();
@@ -58,15 +78,10 @@ namespace HomeWork_LicenceTax
                 case "營業小客車":
                     this.VolumeHorsepower.Items.AddRange(new String[] { "500以下", "501~600", "601~1200", "1201~1800", "1801~2400", "2401~3000"
                     , "3001~4200", "4200~5400", "5401~6600", "6601~7800", "7801以上"});
-                    break;
-                
+                    break;                
             }
             this.VolumeHorsepower.SelectedIndex = 0;
-        }
-        private void VolumeHorsepower_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        }        
         private Decimal TexForYear()
         {
             if (this.VehicleKindListBox1.SelectedIndex == -1) return 0;
@@ -222,37 +237,7 @@ namespace HomeWork_LicenceTax
                     break;
             }
             return TexForYear;
-        }
-
-        private void AllYearRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if(AllYearRadioButton.Checked)
-            {
-                this.label1.Visible = false;
-                this.label2.Visible = false;
-                this.dateTimePicker1.Visible = false;
-                this.dateTimePicker2.Visible = false;
-            }
-        }
-        private void ForTimeRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ForTimeRadioButton.Checked)
-            {
-                this.label1.Visible = true;
-                this.label2.Visible = true;
-                this.dateTimePicker1.Visible = true;
-                this.dateTimePicker2.Visible = true;
-            }
-        }
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-        
+        }        
         private void SendCalculation_Click(object sender, EventArgs e)
         {
             this.CalculationResult.Text = String.Empty; //洗白
@@ -278,7 +263,7 @@ namespace HomeWork_LicenceTax
                 decimal daycnt;
                 if (subtract == 0) //處理不足一年
                 {
-                    daycnt = (to_date - from_date).Days+1;
+                    daycnt = (to_date - from_date).Days + 1;
                     if (DateTime.IsLeapYear(from_date.Year)) dayofyear = 366;
                     else dayofyear = 365;
 
@@ -314,7 +299,7 @@ namespace HomeWork_LicenceTax
                         {
                             if (DateTime.IsLeapYear(to_date.Year)) dayofyear = 366;
                             else dayofyear = 365;
-                            daycnt = (to_date - new DateTime(to_date.Year, 1, 1)).Days+1;//使用者自訂的天數
+                            daycnt = (to_date - new DateTime(to_date.Year, 1, 1)).Days + 1;//使用者自訂的天數
                             tax_ans = Math.Truncate(taxperyear * (daycnt / dayofyear));
                             total += tax_ans;
                             this.CalculationResult.Text += $"\n\n使用期間: {to_date.Year}-1-1 ~ {to_date.ToString("yyyy-MM-dd")}" +
@@ -359,29 +344,18 @@ namespace HomeWork_LicenceTax
         {
             Initial();
         }
-
-        private void CalculationResult_Click(object sender, EventArgs e)
-        {
-            //運算結果
-        }
-
         private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
         {
             var newPoint = new Point(
            this.CalculationResult.Location.X,
            this._startPoint.Y - this.vScrollBar1.Value);
             this.CalculationResult.Location = newPoint;
-
         }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e){}
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e){}
+        private void VolumeHorsepower_SelectedIndexChanged(object sender, EventArgs e){}
+        private void CalculationResult_Click(object sender, EventArgs e){}       
+        private void label1_Click(object sender, EventArgs e){}
+        private void label2_Click(object sender, EventArgs e){}
     }
 }
