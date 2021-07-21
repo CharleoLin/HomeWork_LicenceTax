@@ -169,6 +169,7 @@ namespace HomeWork_LicenceTax
             // 
             this.VolumeHorsepower.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.VolumeHorsepower.FormattingEnabled = true;
+            this.VolumeHorsepower.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.VolumeHorsepower.Items.AddRange(new object[] {
             "150以下"});
             this.VolumeHorsepower.Location = new System.Drawing.Point(31, 33);
@@ -300,7 +301,6 @@ namespace HomeWork_LicenceTax
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox VehicleKindListBox1;
-        private System.Windows.Forms.ComboBox VolumeHorsepower;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label CalculationResult;
@@ -309,6 +309,7 @@ namespace HomeWork_LicenceTax
         private System.Windows.Forms.VScrollBar vScrollBar1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox VolumeHorsepower;
     }
 }
 
