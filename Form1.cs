@@ -246,7 +246,7 @@ namespace HomeWork_LicenceTax
             DateTime to_date = this.dateTimePicker2.Value;
 
             //測是否日期打反，打反則校正回歸
-            if ((to_date.Year - from_date.Year) < 0)
+            if ((to_date - from_date).Days < 0)
             {
                 this.dateTimePicker1.Value = to_date;
                 this.dateTimePicker2.Value = from_date;
